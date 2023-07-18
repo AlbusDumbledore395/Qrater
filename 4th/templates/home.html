@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qrater - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Raleway", Arial, sans-serif;
+      background-image: url('/static/Virgin.jpg');
+    }
+
+    .card {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      border-radius: 10px;
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+      transition: 0.4s;
+      padding: 30px 50px; 
+      background: #fff;
+      cursor: pointer;
+      margin-right: 30px;
+    }
+
+    .card:hover {
+      height: 320px;
+    }
+
+    .imgbox {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(0px);
+      z-index: 99;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .content {
+      padding: 10px 20px;
+      text-align: center;
+      transform: translateY(-450px);
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .card:hover>.content {
+      opacity: 1;
+      transform: translateY(-180px);
+    }
+
+    .content h2 {
+      color: #7f9ead;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      width: 150px;
+      height: 100px;
+      border-radius: 5px;
+    }
+
+
+    @keyframes glow {
+      0% {
+        filter: drop-shadow(10px 10px 100px yellow);
+      }
+
+      100% {
+        filter: drop-shadow(10px 10px 100px yellow) brightness(1.2);
+      }
+    }
+
+    .logo h1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #19253b;
+      margin-top: 10px;
+    }
+
+    .topics {
+      display: flex;
+      justify-content: center;
+    }
+
+    .topic {
+      width: 200px;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 0.5s ease-in-out;
+      transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    }
+
+    .topic:hover {
+      transform: scale(1.1);
+      width: 220px;
+    }
+
+    .topic::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .topic:hover::before {
+      opacity: 1;
+    }
+
+    .topic:hover .topic-details {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      max-height: 100%;
+    }
+
+    .topic-details {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      pointer-events: none;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    .topic h2 {
+      font-size: 24px;
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .topic p {
+      color: #fff;
+    }
+
+    .cta-button {
+      display: block;
+      width: 200px;
+      margin: 40px auto;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      background-color: #333;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #555;
+    }
+
+    .social-links {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .social-links a {
+      margin-right: 10px;
+      color: #555;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="/static/Screenshot 2023-07-14 123735.png" alt="Qrater Logo">
+        <h1>Welcome Q<span>ra</span>ter</h1>
+      </div>
+    </header>
+    <div class="card">
+      <div class="imgbox">
+        <img src="/static/Screenshot 2023-07-16 112723.png">
+      </div>
+      <div class="content">
+        <p>Data structures in Python are a way to organize and store data in a structured and efficient manner. They
+          provide a means to manage and manipulate data effectively, enabling efficient storage, retrieval, and
+          manipulation of information.</p>
+      </div>
+      <div class="card" style="background-color: #f67280;">
+        <div class="imgbox"></div>
+        <!-- <h2>Operating Systems and Adminis</h2> -->
+        <div class="content">
+          <p>An operating system (OS) is a software program that acts as an intermediary between computer hardware and
+            software applications. It is a fundamental component of a computer system that manages and controls hardware
+            resources, provides essential services to software programs, and enables users to interact with the
+            computer.</p>
+        </div>
+      </div>
+      <div class="topic" style="background-color: #c06c84;">
+        <h2>OOP and Design with Java</h2>
+        <div class="topic-details" id="topic-details-3">
+          <p>Java is an object-oriented programming language that fully supports OOP principles. It provides features
+            such as classes, objects, inheritance, polymorphism, and encapsulation, making it well-suited for developing
+            large-scale and modular applications.</p>
+        </div>
+      </div>
+      <div class="topic" style="background-color: #6c5b7b;">
+        <h2>Software Engineering Principles and Practices</h2>
+        <div class="topic-details" id="topic-details-4">
+          <p>Software Engineering Principles and Practices refer to a set of guidelines, concepts, and techniques used
+            in the development and maintenance of high-quality software systems. These principles and practices help
+            software engineers create reliable, scalable, maintainable, and efficient software solutions.</p>
+        </div>
+      </div>
+      <div class="topic" style="background-color: #6497b1;">
+        <h2>Indian Constitution</h2>
+        <div class="topic-details" id="topic-details-5">
+          <p>The Indian Constitution refers to the supreme legal document that governs the Republic of India. It serves
+            as the framework for the organization, functioning, and powers of the government, as well as the fundamental
+            rights and duties of citizens. The Indian Constitution was adopted by the Constituent Assembly on November
+            26, 1949, and came into effect on January 26, 1950, marking the establishment of the Republic of India.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="social-links">
+      <a href="https://twitter.com/qrater_tech">Twitter</a>
+      <a href="https://www.facebook.com/qrater">Facebook</a>
+      <a href="https://www.instagram.com/itz_coolest_ravana_21/">Instagram</a>
+    </div> -->
+  </div>
+</body>
+
+</html>
